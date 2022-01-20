@@ -56,6 +56,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let ac = UIAlertController(title: "Add Word", message: nil, preferredStyle: .alert)
         ac.addTextField()
         
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         let submitAction = UIAlertAction(title: "Submit", style: .default){
             [weak self, weak ac] _ in
             guard let answer = ac?.textFields?[0].text else { return }
